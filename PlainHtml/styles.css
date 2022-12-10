@@ -1,0 +1,28 @@
+body {
+    background: #f1f1f1;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    height: 100vh;
+}
+
+.card {
+    margin: 0;
+    padding: 0.5rem 1rem 1rem 1rem;
+    background: #a1a1a1;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card h2 {
+    margin: 0px 0px 1rem 0px;
+    padding: 0px;
+    border-bottom: 1px solid black;
+}
