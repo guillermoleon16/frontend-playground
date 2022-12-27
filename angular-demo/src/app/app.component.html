@@ -1,0 +1,26 @@
+<h3>Ingresos</h3>
+<p><b>Total: </b>${{GetIncomeTotal()}}</p>
+<ul>
+  <ng-container *ngFor="let item of Incomes; let i = index">
+    <li>Fecha: {{item.Date.toLocaleDateString()}} | Nombre: {{item.Name}} | Valor: {{item.Value}} <button type="button">Eliminar</button></li>
+  </ng-container>
+</ul>
+<button (click)="ToggleNewIncome()" [disabled]="IsAddingNewIncome" type="button">Nuevo Ingreso</button>
+<form *ngIf="IsAddingNewIncome" id="new-income-form" (submit)="OnAddIncome($event)">
+  <label for="income-name">Nombre:</label>
+  <input type="text" name="income-name" [(ngModel)]="NewIncome.Name">
+  <label for="income-value">Valor:</label>
+  <input type="text" name="income-value" [(ngModel)]="NewIncome.Value">
+  <label for="income-date">Fecha:</label>
+  <input type="date" name="income-date" [(ngModel)]="NewIncome.Date">
+  <input type="submit" value="Añadir">
+  <input type="button" value="Cancelar" (click)="ToggleNewIncome()">
+</form>
+
+<h3>Gastos</h3>
+<p><b>Total: </b>${{GetExpensesTotal()}}</p>
+<ul>
+  <ng-container *ngFor="let item of Expenses; let i = index">
+    <li>Fecha: {{item.Date.toLocaleDateString()}} | Nombre: {{item.Name}} | Valor: {{item.Value}}</li>
+  </ng-container>
+</ul>
